@@ -15,7 +15,6 @@ class UsersController extends Controller
     public function showUsers()
     {
         $users = User::All();
-        var_dump($users);
 
         return view('users.show', compact('users')); 
     }
@@ -25,9 +24,10 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createUser()
     {
-        //
+        return view('users.create');
+    
     }
 
     /**
@@ -38,7 +38,20 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User([
+            "firstName" => $request->firstName,
+            "lastName" => $request->lastName,
+            "phone" => $request->phone,
+            "email" => $request->email,
+            "adress" => $request->adress,
+            "zipCode" => $request->zipCode,
+            "salary" => $request->salary,
+            "role" => $request->role,
+            "password" => $request->password
+            ]);
+            
+            $user->save();                               
+            return redirect('/users');
     }
 
     /**
@@ -60,7 +73,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id); 
+        return view('users.edit', compact('user')); 
     }
 
     /**
@@ -72,7 +86,18 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id); 
+        $user->firstName = $request->firstName;
+        $user->lastName = $request->lastName;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->adress = $request->adress;
+        $user->zipCode = $request->zipCode;
+        $user->salary = $request->salary;
+        $user->role = $request->role;
+
+        $user->save();
+        return redirect('/users'); 
     }
 
     /**
@@ -81,8 +106,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteUser($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect('/users');
     }
 }

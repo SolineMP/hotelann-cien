@@ -2,6 +2,6 @@
 
 @section('content')
 
-<p>Bonjour</p>
-    
+<p> TEST <p> 
+
 @endsection

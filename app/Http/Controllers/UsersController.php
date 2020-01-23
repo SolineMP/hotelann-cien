@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User; 
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -27,7 +28,6 @@ class UsersController extends Controller
     public function createUser()
     {
         return view('users.create');
-    
     }
 
     /**
@@ -47,11 +47,14 @@ class UsersController extends Controller
             "zipCode" => $request->zipCode,
             "salary" => $request->salary,
             "role" => $request->role,
-            "password" => $request->password
+            "password" => Hash::make($request->password),
             ]);
             
-            $user->save();                               
-            return redirect('/users');
+            $user->save();
+            if ($request->role == 'customer')
+                return redirect('/');  
+            else                            
+                return redirect('/users');
     }
 
     /**

@@ -1,0 +1,21 @@
+@if ( $user->role == 'owner' && $user->role == 'manager' && $user->role == 'employee')
+<li class="contact" id="menu"> <a href="{{ route('users') }}"> Liste d'utilisateurs</a></li>
+<li class="contact" id="menu"> <a href="{{ route('rooms') }}"> Liste des chambres</a></li>
+<li class="contact" id="menu"> <a href="{{ route('books') }}"> Liste des réservations</a></li>
+@else
+<li class="contact" id="menu"> <a href="{{ route('rooms') }}"> Liste des chambres</a></li>
+@endif
+
+
+
+<form action="{{ route('users.edit', $user->id) }}" method="POST">
+    @csrf                                
+    <button type="submit">Modifier</button>
+</form>    
+</td>
+<td>
+<form action="{{ route('deleteUser', $user->id) }}" method="POST">
+    @csrf 
+    <button type="submit">Supprimer</button>    
+</form>    
+</td> 

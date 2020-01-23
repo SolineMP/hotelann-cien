@@ -43,9 +43,9 @@
                     <form action="{{ route('deleteUser', $user->id) }}" method="POST">
                         @csrf 
                         <button type="submit">Supprimer</button>    
-                    </form>    
-                </td>         
-        </tr>
+                    </form>
+                </td>          
+            </tr>
         @endforeach
     </tbody>
 </table>

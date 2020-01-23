@@ -21,11 +21,11 @@ class CreateBooksTable extends Migration
         });
 
         Schema::table('books', function (Blueprint $table) {
-            $table->unsignedBigInteger('rooms_id');
-            $table->foreign('rooms_id')->references('id')->on('rooms');
+            $table->unsignedBigInteger('room_id');
+            $table->foreign('room_id')->references('id')->on('rooms');
             
-            $table->unsignedBigInteger('users_id');  
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');  
+            $table->foreign('user_id')->references('id')->on('users');
         });
 
 /*         Schema::table('books', function (Blueprint $table) {

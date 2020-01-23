@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    public function Book()
+    public function book()
     {
         return $this->hasMany('App\Book');
     }
+
+    protected $fillable = [
+        'name', 'number', 'type', 'price',
+    ];
 }

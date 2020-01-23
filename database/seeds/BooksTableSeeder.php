@@ -14,8 +14,8 @@ class BooksTableSeeder extends Seeder
         DB::table('books')->insert([
             'reservation' => 20200504,
             'registration' => 20200122,
-            'users_id' => 4,
-            'rooms_id' => 4,
+            'user_id' => 4,
+            'room_id' => 4,
         ]);
     }
 }

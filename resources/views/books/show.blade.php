@@ -1,9 +1,11 @@
 @extends('layouts.template')
 @section('content')
 
-    <button><a href="{{route('createBook')}}">Ajouter une réservation </a></button>
-    <h2> Réservations actuelles </h2> 
+    <button><a href="{{route('createBook')}}">Réserver</a></button>
     
+    @if(Auth::user()->role == 'customer')
+    @else 
+    <h2> Réservations actuelles </h2> 
     <table>
         <tr>
             <td>Prénom</td>
@@ -22,6 +24,6 @@
         </tr>
         @endforeach
     </table>
-
+    @endif
 
 @endsection 

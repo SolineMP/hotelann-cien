@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
+    <title>Hôtel de l'exilé</title>
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">  
     
 </head>
@@ -20,22 +20,21 @@
             <a class="contact" href="{{ route('login') }}">{{ __('Login') }}</a>
         </li>
         <li> <a href="{{ route('register')}}">S'enregistrer</a></li>
-    @else
-
+    @endguest 
+    @auth
+        @if(Auth::user()->role == 'customer')
+            <li class="contact" id="menu"> <a href="{{ route('home') }}">Accueil</a></li>
+            <li class="contact" id="menu"> <a href="{{ route('showOne', Auth::user()->id )}}"> Profil </a></li>
+            <li class="contact" id="menu"> <a href="{{ route('rooms') }}"> Liste des chambres</a></li>
+            <li class="contact" id="menu"> <a href="{{ route('books') }}"> Réserver </a></li>
+        @else 
+            <li class="contact" id="menu"> <a href="{{ route('home') }}">Accueil</a></li>
+            <li class="contact" id="menu"> <a href="{{ route('showOne', Auth::user()->id )}}"> {{Auth::user()->email}} </a></li>
             <li class="contact" id="menu"> <a href="{{ route('users') }}"> Liste d'utilisateurs</a></li>
             <li class="contact" id="menu"> <a href="{{ route('rooms') }}"> Liste des chambres</a></li>
-            <li class="contact" id="menu"> <a href="{{ route('books') }}"> Liste des réservations</a></li>
-
-            <li class="contact" id="menu"> <a href="{{ route('rooms') }}"> Liste des chambres</a></li>
-
-        <li class="contact" id="menu"> <a href="{{ route('home') }}">Accueil</a></li>
-        <li class="contact" id="menu"> <a href=""> Profil </a></li>
-        <li> <a href="{{ route('users')}}">Liste des utilisateurs</a></li>
-        <li class="contact">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
-            </a>
-
+            <li class="contact" id="menu"> <a href="{{ route('books') }}"> Liste des réservations</a></li> 
+        @endif
+                              
             <div class="contact" aria-labelledby="navbarDropdown">
                 <a class="contact" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
@@ -47,7 +46,7 @@
                 </form>
             </div>
         </li>
-    @endguest
+    @endauth    
 </ul>
     </header>
 

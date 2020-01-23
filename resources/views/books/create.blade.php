@@ -14,11 +14,18 @@
     <div>
         <label for="user_id">Client</label>
         <select name="user_id">
-    @foreach ($users as $user)
-        @if ($user->role == 'customer') 
-            <option value="{{$user->id}}"> M. {{$user->firstName}} {{$user->lastName}} </option>      
-        @endif
-    @endforeach
+             
+            @if(Auth::user()->role == 'customer')
+                <option value="{{Auth::user()->id}}"> M. {{Auth::user()->firstName}} {{Auth::user()->lastName}} </option>
+            @else 
+                @foreach ($users as $user)
+                    @if ($user->role == 'customer') 
+                        <option value="{{$user->id}}"> M. {{$user->firstName}} {{$user->lastName}} </option>      
+                    @endif
+                @endforeach
+            @endif
+
+
         </select>
     </div>
     <div>

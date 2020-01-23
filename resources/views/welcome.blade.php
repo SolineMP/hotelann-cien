@@ -2,6 +2,7 @@
 
 @section('content')
 
-<p>Bonjour</p>
+<h1> Bienvenue, Exilé </h1>
+<img src="/img/girls.jpg" alt="">
     
 @endsection

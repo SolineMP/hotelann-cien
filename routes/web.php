@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users', 'UsersController@showUsers')->name('users');
 Route::get('/createUser', 'UsersController@createUser')->name('createUser');
+Route::get('/showOne/{id}', 'UsersController@show')->name('showOne');
 Route::post('/storeUser', 'UsersController@store')->name('storeUser');
 Route::post('/user/{id}', 'UsersController@edit')->name('editUser');
 Route::post('/updateUser/{id}', 'UsersController@update')->name('updateUser');

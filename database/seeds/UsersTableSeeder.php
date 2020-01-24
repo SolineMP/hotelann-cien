@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'zipCode' => 74240,
             'salary' => '1250',
             'role' => 'owner',
-            'password' => '123',
+            'password' => Hash::make('123'),
         ]);
 
         DB::table('users')->insert([
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
             'zipCode' => 15240,
             'salary' => '2150',
             'role' => 'manager',
-            'password' => '123',
+            'password' => Hash::make('123'),
 
         ]);
      
@@ -45,7 +45,7 @@ class UsersTableSeeder extends Seeder
             'zipCode' => 74240,
             'salary' => '1850',
             'role' => 'employee',
-            'password' => '123',
+            'password' => Hash::make('123'),
             ]);
 
         DB::table('users')->insert([
@@ -57,7 +57,7 @@ class UsersTableSeeder extends Seeder
             'zipCode' => 32240,
             'salary' => '',
             'role' => 'customer',
-            'password' => '123',
+            'password' => Hash::make('123'),
         ]);
     }
 }

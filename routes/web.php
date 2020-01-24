@@ -20,7 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 /* ROUTE FOR USER */ 
-
 Route::get('/users', 'UsersController@showUsers')->name('users');
 Route::get('/createUser', 'UsersController@createUser')->name('createUser');
 Route::get('/showOne/{id}', 'UsersController@show')->name('showOne');
@@ -44,3 +43,4 @@ Route::post('/deleteRoom/{id}', 'RoomsController@destroy')->name('deleteRoom');
 Route::get('/books', 'BookController@index')->name('books');
 Route::get('/createBook', 'BookController@createBook')->name('createBook');
 Route::post('/storeBook', 'BookController@store')->name('storeBook');
+

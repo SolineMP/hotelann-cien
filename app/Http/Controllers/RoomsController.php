@@ -41,6 +41,8 @@ class RoomsController extends Controller
             "name" => $request->name,
             "type" => $request->type,
             "price" => $request->price,
+            "description" => $request->description,
+            "picture" => $request->price,
             ]);
             
             $room->save();                               
@@ -83,6 +85,8 @@ class RoomsController extends Controller
         $room->name = $request->name;
         $room->price = $request->price;
         $room->type = $request->type;
+        $room->description = $request->description;
+        $room->picture = $request->picture;
 
         $room->save();
         return redirect('/rooms'); 

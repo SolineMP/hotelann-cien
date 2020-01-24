@@ -11,8 +11,14 @@
             <th> Email </th>
             <th> Adresse et Ville </th>
             <th> Code postal </th> 
-            @if($user->role = 'manager' && $user->role = 'employee' && $user->role = 'owner' )
+            @if($user->role == 'manager') 
                 <th> Salaire </th> 
+            @elseif($user->role == 'employee')
+                <th> Salaire </th> 
+            @elseif($user->role == 'owner')    
+                <th> Salaire </th> 
+            @elseif($user->role == 'customer')
+
             @endif 
 
         </tr>
@@ -25,9 +31,14 @@
             <td> {{ $user->email}} </td>
             <td> {{ $user->adress}} </td>
             <td> {{ $user->zipCode }} </td>
-            @if($user->role = 'manager' && $user->role = 'employee' && $user->role = 'owner')
+            @if($user->role == 'manager') 
                 <td> {{ $user->salary}} </td>
-            @else
+            @elseif($user->role == 'employee') 
+                <td> {{ $user->salary}} </td>
+            @elseif($user->role == 'owner')
+                <td> {{ $user->salary}} </td>
+            @elseif($user->role == 'customer')
+
             @endif
     </tbody>
 <table>    

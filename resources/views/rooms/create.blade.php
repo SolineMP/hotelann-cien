@@ -25,6 +25,14 @@
         <input type="number" name="price">
     </div>
     <div>
+        <label for="description">Description</label>
+        <input type="text" name="description">
+    </div>
+    <div>
+        <label for="picture">Image :</label>
+        <input type="text" name="picture">
+    </div>
+    <div>
         <input type="submit" value="Ajouter">
     </div>
 </form>

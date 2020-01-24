@@ -19,7 +19,6 @@ class BookController extends Controller
         $books = Book::All();
         $user = User::All();
         $room = Room::All();
-
         return view('books.show', compact('books', 'user', 'room')); 
     }
 
@@ -51,7 +50,7 @@ class BookController extends Controller
             ]);
             
             $book->save();                               
-            return redirect('/books');
+            return redirect('/home');
     }
 
     /**

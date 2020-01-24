@@ -2,7 +2,11 @@
 
 @section('content')
 
-<h1> Bienvenue, Exilé </h1>
-<img src="/img/girls.jpg" alt="">
+<div class="image fit">
+    <img src="/img/beach.png" alt="">
+</div>
+
+
+
     
 @endsection

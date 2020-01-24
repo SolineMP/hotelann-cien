@@ -3,7 +3,7 @@
 @section('content')
 
 
-@if(Auth::user()->role == 'employee')
+@if(Auth::user()->role == 'employee')  
 <h2>Clients</h2>
 @else
 <button><a href="{{route('createUser')}}"><h3> Créer un nouvel utilisateur : </h3> </a></button>
@@ -20,11 +20,19 @@
             <th> Email </th>
             <th> Adresse et Ville </th>
             <th> Code postal </th>
-            @if(Auth::user()->role == 'manager' && Auth::user()->role == 'owner') 
+            @if(Auth::user()->role == 'manager') 
                 <th> Rôle </th>
                 <th> Salaire </th>   
                 <th> Editer </th>
-            @endif
+            @elseif(Auth::user()->role == 'owner') 
+                <th> Rôle </th>
+                <th> Salaire </th>   
+                <th> Editer </th>
+            @elseif(Auth::user()->role == 'employee') 
+                <th> Salaire </th> 
+            @elseif(Auth::user()->role == 'customer')
+                <th> Prochaine réservation <th> 
+            @endif  
         </tr>
     </thead>
     <tbody>

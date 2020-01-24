@@ -51,10 +51,8 @@ class UsersController extends Controller
             ]);
             
             $user->save();
-            if ($request->role == 'customer')
                 return redirect('/');  
-            else                            
-                return redirect('/users');
+
     }
 
     /**

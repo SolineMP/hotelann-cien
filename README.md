@@ -11,10 +11,13 @@
 
     Une fois les seeds chargés il est possible pour : 
         - Email: Chef@Chef.fr / mot de passe: 123 => CRUD sur toutes les listes (owner équivalent à admin), R fiche perso
-        - Email : f.tdt@felin.fr / mot de passe: 123 => CRUD sur les utilisateurs, petit raté sur les chambres, R fiche perso
-        - Email : aurevoir@monsieur.fr / mot de passe: 123 => CRUD réservation, R des utilisateurs Clients, R fiche perso 
+        - Email : f.tdt@felin.fr / mot de passe: 123 => CRUD sur les utilisateurs, R des chambres, petit raté sur les chambres, CR réservation, R fiche perso
+        - Email : aurevoir@monsieur.fr / mot de passe: 123 => CR réservation, R des chambres, R des utilisateurs Clients, R fiche perso 
         - Email : s.piemont@123.fr / mot de passe : 123 => C réservation, R fiche perso
 
     Dans l'ensemble, tout est améliorable. 
 
+    Petit "cookie clicker" like version éco plus.
+    Requête AJAX liées à Star WarS. 
+    
     Merci beaucoup pour la formation! 

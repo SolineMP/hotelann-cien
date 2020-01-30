@@ -4,7 +4,7 @@
     Pour finir en beauté, j'ai décidé de faire un hôtel des planques du meilleur jeu vidéo du monde : Path of Exile !
 
     En terme de sécurité, mon site est bas de plafond. Il faut bien admettre. 
-    Les routes ne sont pas sécurisée. 
+    Les routes ne sont pas sécurisées. 
 
     J'ai tenté de ne faire qu'une seule vue pour tous les utilisateurs en mettant des conditions. Je ne pense pas que ce soit la solution la plus propre et la plus appropriée. 
     Mais c'était bien d'essayer.
